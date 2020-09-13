@@ -10,7 +10,6 @@ async function go() {
 		await runTests({
 			extensionDevelopmentPath,
 			extensionTestsPath,
-			version: '1.48.2',
 			launchArgs: ['--disable-gpu']
 		});
 	} catch (err) {
