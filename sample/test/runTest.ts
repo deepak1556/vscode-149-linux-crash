@@ -2,6 +2,8 @@ import * as path from 'path';
 
 import { runTests } from '../../lib/index';
 
+const CRASH_DIR = path.resolve(__dirname, '../../../../crash');
+
 async function go() {
 	try {
 		const extensionDevelopmentPath = path.resolve(__dirname, '../../../');
@@ -10,7 +12,7 @@ async function go() {
 		await runTests({
 			extensionDevelopmentPath,
 			extensionTestsPath,
-      version: '1.48.2'
+      launchArgs: [`--crash-reporter-directory=${CRASH_DIR}`]
 		});
 	} catch (err) {
 		console.error('Failed to run tests');
