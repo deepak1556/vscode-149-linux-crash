@@ -37,7 +37,6 @@ jobs:
           yarn compile
 
       - name: Start xvfb
-        if: matrix.os == 'ubuntu-latest'
         run: |
           set -e
           /usr/bin/Xvfb :10 -ac >> /tmp/Xvfb.out 2>&1 &
