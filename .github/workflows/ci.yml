@@ -55,4 +55,4 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: crash
-          path: crash/
+          path: /home/runner/work/vscode-149-linux-crash/crash
