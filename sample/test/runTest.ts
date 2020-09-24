@@ -12,7 +12,8 @@ async function go() {
 		await runTests({
 			extensionDevelopmentPath,
 			extensionTestsPath,
-      launchArgs: [`--crash-reporter-directory=${CRASH_DIR}`]
+	  launchArgs: [`--crash-reporter-directory=${CRASH_DIR}`],
+			vscodeExecutablePath: '/snap/bin/code'
 		});
 	} catch (err) {
 		console.error('Failed to run tests');
