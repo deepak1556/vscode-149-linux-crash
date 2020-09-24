@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-16.04
 
     steps:
       - uses: actions/checkout@v2
@@ -31,9 +31,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Install libgbm
-        run: sudo apt-get -y install libgbm-dev
-
       - name: Install dependencies and build
         run: |
           yarn
@@ -47,6 +44,7 @@ jobs:
           echo "Started xvfb"
 
       - name: E2E test
+        uses: docker://vscodehub.azurecr.io/vscode-linux-build-agent:bionic
         run: |
           yarn
           yarn compile
