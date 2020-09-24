@@ -2,7 +2,7 @@ import * as path from 'path';
 
 import { runTests } from '../../lib/index';
 
-const CRASH_DIR = path.resolve(__dirname, '../../../../crash');
+const CRASH_DIR = path.resolve(__dirname, '../../../crash');
 
 async function go() {
 	try {
