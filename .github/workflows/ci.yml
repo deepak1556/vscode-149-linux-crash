@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-16.04
+    uses: docker://vscodehub.azurecr.io/vscode-linux-build-agent:bionic
 
     steps:
       - uses: actions/checkout@v2
@@ -44,7 +44,6 @@ jobs:
           echo "Started xvfb"
 
       - name: E2E test
-        uses: docker://vscodehub.azurecr.io/vscode-linux-build-agent:bionic
         run: |
           yarn
           yarn compile
